@@ -45,4 +45,8 @@ public class User {
 	public void setMobile_phone(String mobile_phone) {
 		this.mobile_phone = mobile_phone;
 	}
+
+	public String toString() {
+		return username + ", " + password + ", " + first_name + ", " + last_name + ", " + mobile_phone;
+	}
 }
