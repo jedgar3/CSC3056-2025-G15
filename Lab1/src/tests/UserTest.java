@@ -107,11 +107,11 @@ public class UserTest {
         // 3 - Verify
         System.out.println("Starting the assertion of test method: testUserConstructorByAssertion");
 
-        assert testUser.getUsername().equals(testUsername);
-        assert testUser.getPassword().equals(testPassword);
-        assert testUser.getFirst_name().equals(testFirstName);
-        assert testUser.getLast_name().equals(testLastName);
-        assert testUser.getMobile_phone().equals(testMobilePhone);
+        assert testUser.getUsername().equals(testUsername) : "TC1-getUsername-Failed";
+        assert testUser.getPassword().equals(testPassword) : "TC2-getPassword-Failed";
+        assert testUser.getFirst_name().equals(testFirstName) : "TC3-getFirst_name-Failed";
+        assert testUser.getLast_name().equals(testLastName) : "TC4-getLast_name-Failed";
+        assert testUser.getMobile_phone().equals(testMobilePhone) : "TC5-getMobile_phone-Failed";
 
         System.out.println("Finished the assertion of test method: testUserConstructorByAssertion");
     }
