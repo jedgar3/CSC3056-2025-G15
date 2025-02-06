@@ -7,10 +7,11 @@ import java.util.Objects;
 
 public class UserTest {
     public static void main(String[] args) {
-        testUserConstructor();
+        testUserConstructorBySelection();
+        testUserConstructorByAssertion();
     }
 
-    public static void testUserConstructor() {
+    private static void testUserConstructorBySelection() {
         // 1 - Setup
         String testUsername = "mike";
         String testPassword = "my_passwd";
@@ -22,7 +23,7 @@ public class UserTest {
         User testUser = new User(testUsername, testPassword, testFirstName, testLastName, testMobilePhone);
 
         // 3 - Verify
-        System.out.println("Starting the assertion of test method: testUserConstructor");
+        System.out.println("Starting the assertion of test method: testUserConstructorBySelection");
 
         String testCaseName = "TC1-getUsername";
 
@@ -89,5 +90,29 @@ public class UserTest {
 //            new after refactoring
             TestUtils.printTestFailed(testCaseName);
         }
+        System.out.println();
+    }
+
+    private static void testUserConstructorByAssertion() {
+        // 1 - Setup
+        String testUsername = "mike";
+        String testPassword = "my_passwd";
+        String testFirstName = "Mike";
+        String testLastName = "Smith";
+        String testMobilePhone = "07771234567";
+
+        // 2 - Exercise
+        User testUser = new User(testUsername, testPassword, testFirstName, testLastName, testMobilePhone);
+
+        // 3 - Verify
+        System.out.println("Starting the assertion of test method: testUserConstructorByAssertion");
+
+        assert testUser.getUsername().equals(testUsername);
+        assert testUser.getPassword().equals(testPassword);
+        assert testUser.getFirst_name().equals(testFirstName);
+        assert testUser.getLast_name().equals(testLastName);
+        assert testUser.getMobile_phone().equals(testMobilePhone);
+
+        System.out.println("Finished the assertion of test method: testUserConstructorByAssertion");
     }
 }
