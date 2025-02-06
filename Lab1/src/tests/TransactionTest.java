@@ -61,9 +61,9 @@ public class TransactionTest {
         // 3 - Verify
         System.out.println("Starting the assertion of test method: testTransactionConstructorBySelection");
 
-        assert Objects.equals(testTransaction.getAccountNum(), testTransactionAccount) : "Test failed";
-        assert Objects.equals(testTransaction.getTransactionAmount(), testTransactionAmount) : "Test failed";
-        assert Objects.equals(testTransaction.getTransactionDate(), testTransactionDate) : "Test failed";
+        assert Objects.equals(testTransaction.getAccountNum(), testTransactionAccount) : "TC1-getTransactionId-Failed";
+        assert Objects.equals(testTransaction.getTransactionAmount(), testTransactionAmount) : "TC2-getTransactionAmount-Failed";
+        assert Objects.equals(testTransaction.getTransactionDate(), testTransactionDate) : "TC3-getTransactionDate-Failed";
     }
 
 }
