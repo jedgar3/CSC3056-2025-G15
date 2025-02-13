@@ -8,10 +8,10 @@ public class TestUtils {
 
 
     public static void printTestPassed (String testCase) {
-        System.out.println(TEXT_COLOR_GREEN + testCase + TEXT_COLOR_RESET);
+        System.out.println(TEXT_COLOR_GREEN + "PASSED--" + testCase + TEXT_COLOR_RESET);
     }
 
     public static void printTestFailed (String testCase) {
-        System.out.println(TEXT_COLOR_RED + testCase + TEXT_COLOR_RESET);
+        System.out.println(TEXT_COLOR_RED + "FAILED--" + testCase + TEXT_COLOR_RESET);
     }
 }

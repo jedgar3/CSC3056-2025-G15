@@ -90,6 +90,16 @@ public class UserTest {
 //            new after refactoring
             TestUtils.printTestFailed(testCaseName);
         }
+
+        String userString = testUsername + ", " + testPassword + ", " + testFirstName + ", " + testLastName + ", " + testMobilePhone;
+        testCaseName = "TC6-toString";
+
+        if (testUser.toString().equals(userString)) {
+            TestUtils.printTestPassed(testCaseName);
+        } else {
+            TestUtils.printTestFailed(testCaseName);
+        }
+
         System.out.println();
     }
 
@@ -112,6 +122,10 @@ public class UserTest {
         assert testUser.getFirst_name().equals(testFirstName) : "TC3-getFirst_name-Failed";
         assert testUser.getLast_name().equals(testLastName) : "TC4-getLast_name-Failed";
         assert testUser.getMobile_phone().equals(testMobilePhone) : "TC5-getMobile_phone-Failed";
+
+        String userString = testUsername + ", " + testPassword + ", " + testFirstName + ", " + testLastName + ", " + testMobilePhone;
+
+        assert testUser.toString().equals(userString) : "TC6-toString-Failed";
 
         System.out.println("Finished the assertion of test method: testUserConstructorByAssertion");
     }

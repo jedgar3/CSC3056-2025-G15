@@ -55,6 +55,16 @@ public class AccountTest {
         } else {
             TestUtils.printTestFailed(testCaseName);
         }
+
+        testCaseName = "TC5-toString";
+
+        String accountString = testAccountNumber + ", " + testUsernameOfAccountHolder + ", " + testAccountType + ", " + testAccountOpeningDate;
+
+        if (testAccount.toString().equals(accountString)) {
+            TestUtils.printTestPassed(testCaseName);
+        } else {
+            TestUtils.printTestFailed(testCaseName);
+        }
     }
 
     private static void testAccountConstructorByAssertion() {
@@ -74,5 +84,11 @@ public class AccountTest {
         assert testAccount.getUsername_of_account_holder().equals(testUsernameOfAccountHolder) : "TC2-getUsernameOfAccountHolder-Failed";
         assert testAccount.getAccount_type().equals(testAccountType) : "TC3-getAccountType-Failed";
         assert testAccount.getAccount_opening_date().equals(testAccountOpeningDate) : "TC4-getAccountOpeningDate-Failed";
+
+        String accountString = testAccountNumber + ", " + testUsernameOfAccountHolder + ", " + testAccountType + ", " + testAccountOpeningDate;
+
+        assert testAccount.toString().equals(accountString) : "TC5-toString-Failed";
+
+        System.out.println("Finished the assertion of test method: testAccountConstructorByAssertion");
     }
 }
